@@ -1,18 +1,21 @@
-import { ApiService } from './api.service';
+import { GameResult } from './../models/games.model';
+import { HttpClient } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  apiSelected = new EventEmitter<ApiService>();
-
-  private api: ApiService[] = [
-    new ApiService('https://api.rawg.io/api/games?dates=2010-01-01,2020-12-31&developers=4132')
-  ];
+  apiService = new EventEmitter<ApiService>();
 
 
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  constructor() { }
+  getData(): Observable<any> {
+    return this.http.get('https://api.rawg.io/api/games?dates=2010-01-01,2020-12-31&developers=4132');
+  }
 
 }

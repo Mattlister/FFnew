@@ -1,5 +1,6 @@
+import { GameResult } from './models/games.model';
+import { Game } from '/Users/matthewlister/Desktop/FFNew/FFnew/src/app/models/games.model';
 import { ApiService } from './services/api.service';
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 
@@ -11,17 +12,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Final Fantasy Heroes';
+  games: Game[] = [];
 
-posts: any = '';
-
-constructor(private http: HttpClient) {
+constructor(private apiService: ApiService) {
+  this.getGames();
 }
 
-getPosts() {
-  this.posts = this.http.get().subscribe(res => {
-    this.posts = res;
-    console.log(res);
+getGames(): void {
+  this.apiService.getData().subscribe((resp: GameResult) => {
+  this.games = resp.results;
   });
 }
+
 }
 

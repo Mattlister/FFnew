@@ -1,6 +1,23 @@
-<input type="text">
-<p>{{ title }}</p>
+<div class="row">
+  <div class="col-xs-12">
+    <hr>
+  </div>
+</div>
+<button
+type="button"
+class="btn btn-primary dropdown-toggle">
+Game Data
+</button>
 
-<button (click)="getPosts()">Get Posts</button>
+<div *ngFor="let game of games">
+  <h1>{{game.name}}</h1>
+ <img src="{{ game.background_image}}" alt="" class="src">
+  <div *ngFor="let genre of game.genres">
+    {{genre.name}}
+  </div>
 
-{{ posts | json}}
+  {{game.rating}}
+
+
+</div>
+
