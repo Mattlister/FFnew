@@ -1,6 +1,5 @@
-
 import { ApiService } from './services/api.service';
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiResponse, Game } from './models/test.model';
 
 
@@ -10,6 +9,7 @@ import { ApiResponse, Game } from './models/test.model';
   styleUrls: ['./app.component.scss'],
 
 })
+
 export class AppComponent {
   title = 'Final Fantasy Heroes';
   games: Game[] = [];
