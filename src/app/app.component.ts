@@ -1,7 +1,7 @@
-import { GameResult } from './models/games.model';
-import { Game } from '/Users/matthewlister/Desktop/FFNew/FFnew/src/app/models/games.model';
+
 import { ApiService } from './services/api.service';
 import { Component } from '@angular/core';
+import { ApiResponse, Game } from './models/test.model';
 
 
 @Component({
@@ -19,8 +19,9 @@ constructor(private apiService: ApiService) {
 }
 
 getGames(): void {
-  this.apiService.getData().subscribe((resp: GameResult) => {
+  this.apiService.getData().subscribe((resp: ApiResponse) => {
   this.games = resp.results;
+  console.log(this.games);
   });
 }
 

@@ -2,6 +2,7 @@ import { GameResult } from './../models/games.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ApiResponse } from '../models/test.model';
 
 @Injectable({
   providedIn: 'root'
