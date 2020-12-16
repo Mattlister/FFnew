@@ -13,6 +13,8 @@ import { ApiResponse, Game } from './models/test.model';
 export class AppComponent {
   title = 'Final Fantasy Heroes';
   games: Game[] = [];
+  stars: any[] = new Array(5);
+  starValue: [] = [];
 
 constructor(private apiService: ApiService) {
   this.getGames();

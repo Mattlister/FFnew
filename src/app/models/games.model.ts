@@ -1,5 +1,3 @@
-import { Title } from '@angular/platform-browser';
-
 export interface Game {
 name: string;
 background_image: string;

@@ -3,13 +3,6 @@
     <hr>
   </div>
 </div>
-<button
-type="button"
-class="btn btn-primary dropdown-toggle">
-Game Data
-</button>
-
-
 
 <div class="container">
 <div class="row">
@@ -17,25 +10,23 @@ Game Data
   <div class="col-sm-12 col-md-6 col-lg-4">
   <div class="card">
     <h3>{{game.name}}</h3>
-    <img src="{{ game.background_image}}" class="card-img-top" alt="...">
+    <img src="{{ game.background_image }}" class="card-img-top" alt="...">
     <div class="card-body">
-      <i *ngFor="let star of stars" [class]="iconClass[star]"></i>
 
-      {{game.rating}}
-      {{game.added}}
-      {{game.id}}
+
       <div *ngFor="let genre of game.genres">
-        {{genre.name}}
+        {{game.added}}
       </div>
-      {{game.rating}}
+
+      <ul class="rating inline-ul">
+        <li *ngFor="let star of stars; let i = index">
+          <i class="fa" *ngIf="game.rating >= i + 0.5" [ngClass]="{'fa-star-half': game.rating >= i + 0.5 && game.rating < i + 1, 'fa-star': game.rating >= i + 1}"></i>
+        </li>
+      </ul>
 
     </div>
   </div>
   </div>
-
-
-
-
 
 
 </div>
