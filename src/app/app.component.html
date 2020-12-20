@@ -1,33 +1,28 @@
-<div class="row">
-  <div class="col-xs-12">
-    <hr>
-  </div>
-</div>
-
 <div class="container">
-<div class="row">
-<div *ngFor="let game of games">
-  <div class="col-sm-12 col-md-6 col-lg-4">
-  <div class="card">
-    <h3>{{game.name}}</h3>
-    <img src="{{ game.background_image }}" class="card-img-top" alt="...">
-    <div class="card-body">
+  <div class="row">
+    <div *ngFor="let game of games">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body-text-center">
+            <h3>{{game.name}}</h3>
+            <img src="{{ game.background_image }}" class="card-img-top" alt="...">
+            <h2>Game Added</h2>{{game.released}}
+            <h2>Game ID</h2>{{game.id}}
+            <h2>Game Rating</h2>
+            <div *ngFor="let genre of game.genres"></div>
+          </div>
 
+          <ul class="rating inline-ul">
+            <div *ngFor="let star of stars; let i = index">
+              <i class="fa" *ngIf="game.rating >= i + 0.5"
+                [ngClass]="{'fa-star-half': game.rating >= i + 0.5 && game.rating < i + 1, 'fa-star': game.rating >= i + 1}"></i>
+            </div>
+          </ul>
 
-      <div *ngFor="let genre of game.genres">
-
+        </div>
       </div>
-
-      <ul class="rating inline-ul">
-        <li *ngFor="let star of stars; let i = index">
-          <i class="fa" *ngIf="game.rating >= i + 0.5" [ngClass]="{'fa-star-half': game.rating >= i + 0.5 && game.rating < i + 1, 'fa-star': game.rating >= i + 1}"></i>
-        </li>
-      </ul>
-
     </div>
-  </div>
-  </div>
 
 
-</div>
+  </div>
 </div>

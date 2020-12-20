@@ -1,5 +1,5 @@
 import { ApiService } from './services/api.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiResponse, Game } from './models/test.model';
 
 

@@ -1,14 +1,18 @@
 <!doctype html>
-<i class="fas fa-star"></i>
 <html lang="en">
 <head>
+  <div class="container">
+</div>
+
+  <my-app>Square Enix Games</my-app>
   <meta charset="utf-8">
-  <my-app>loading</my-app>
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <div class="bg"></div>
 </head>
+
 <body>
   <app-root></app-root>
   <app-star-rating [game.rating="data?"] ></app-star-rating>
